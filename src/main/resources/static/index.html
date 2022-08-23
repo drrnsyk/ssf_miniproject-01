@@ -23,7 +23,7 @@
                     nav justify-content-center
                     ">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Track Everything</a>
+                <a class="nav-item nav-link" href="">Track Everything</a>
                 <a class="nav-item nav-link" href="#">Eat Anything</a>
                 <a class="nav-item nav-link" href="#">Cook Anything</a>
                 <a class="nav-item nav-link" href="#">View Everything</a>
@@ -42,34 +42,51 @@
               </figure>
         </div>
 
-        <!-- food log entries -->
+        <!-- food log entry -->
         <div class="container">
-            <form>
+            <form method="POST" action="/track">
                 <div class="mb-3 mt-3">
                   <label for="neighbourhood" class="form-label">Neighbourhood:</label>
-                  <input type="text" class="form-control" id="neighbourhood" placeholder="Enter neighbourhood" name="neighbourhood">
+                  <br>
+                  <select name="neighbourhood" id="neighbourhood" style="width:100%">
+                    <option value="admiralty">Admiralty</option>
+                    <option value="alexandra_hill">Alexandra Hill</option>
+                    <option value="alexandra_north">Alexandra North</option>
+                    <option value="anak_bukit">Anak Bukit</option>
+                    <option value="ang_mo_kio">Ang Mo Kio</option>
+                    <option value="anson">Anson</option>
+                    <option value="arab_street">Arab Street</option>
+                  </select>
+                  <!-- <input type="text" class="form-control" id="neighbourhood" placeholder="Enter neighbourhood" name="neighbourhood"> -->
                 </div>
                 <div class="mb-3 mt-3">
                   <label for="establishmentType" class="form-label">Establishment Type:</label>
-                  <input type="text" class="form-control" id="establishmentType" placeholder="Enter establishment type" name="establishmentType">
+                  <br>
+                  <select name="establishmentType" id="establishmentType" style="width:100%">
+                    <option value="restaurant">Restaurant</option>
+                    <option value="cafe">Cafe</option>
+                    <option value="pub">Pub</option>
+                    <option value="hawker">Hawker</option>
+                  </select>
+                  <!-- <input type="text" class="form-control" id="establishmentType" placeholder="Enter establishment type" name="establishmentType"> -->
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="establishmentName" class="form-label">Establishment Name:</label>
-                    <input type="text" class="form-control" id="establishmentName" placeholder="Enter establishment name" name="establishmentName">
+                    <input required type="text" class="form-control" id="establishmentName" placeholder="Enter establishment name" name="establishmentName">
                   </div>
-                  <div class="mb-3 mt-3">
+                  <!-- <div class="mb-3 mt-3">
                     <label for="favouriteFood" class="form-label">Favourite Food:</label>
                     <input type="text" class="form-control" id="favouriteFood" placeholder="Enter favourite food" name="favouriteFood">
                   </div>
                   <div class="mb-3 mt-3">
                     <label for="seatingType" class="form-label">Seating Type:</label>
                     <input type="text" class="form-control" id="seatingType" placeholder="Enter seating type" name="seatingType">
-                  </div>
+                  </div> -->
                   <div class="mb-3 mt-3">
                     <label for="userName" class="form-label">Username:</label>
-                    <input type="text" class="form-control" id="userName" placeholder="Enter username" name="userName">
+                    <input required type="text" class="form-control" id="userName" placeholder="Enter username" name="userName">
                   </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Log it!</button>
               </form>
         </div>
 
