@@ -23,26 +23,71 @@
                     nav justify-content-center
                     ">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="/">Track Everything</a>
-                <a class="nav-item nav-link" href="/">Eat Anything</a>
-                <a class="nav-item nav-link" href="/">Cook Anything</a>
-                <a class="nav-item nav-link" href="/">View Everything</a>
+                <a class="nav-item nav-link" data-th-href="@{/track(userName=${userName})}">Track Everything</a>
+                <a class="nav-item nav-link" href="/eat">Eat Anything</a>
+                <a class="nav-item nav-link" href="/cook">Cook Anything</a>
+                <a class="nav-item nav-link" href="/view">View Everything</a>
             </div>
         </nav>
+
+        <!-- line break -->
+        <br>
 
         <!-- content header -->
         <div class="container mb-3 mt-3 ">
             <figure class="text-end">
                 <blockquote class="blockquote">
-                    Log more food places
+                    Added successfully, log more food places
                 </blockquote>
                 <figcaption class="blockquote-footer">
-                    <a href="/">Track Everything</a>
+                    <a data-th-href="@{/track(userName=${userName})}">Click here to continue logging</a>
                 </figcaption>
               </figure>
         </div>
 
+        <!-- line break -->
+        <br>
+
         <!-- content body -->
+        <div class="container border">
+            <H3>Recently added</H3>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">S/N</th>
+                    <th scope="col">Establishment Name</th>
+                    <th scope="col">Establisyhment Type</th>
+                    <th scope="col">Neighbourhood</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-th-each="p,iterationStatus: ${places}">
+                    <th data-th-text="${iterationStatus.count}"></th>
+                    <td data-th-text="${p.getEstablishmentName}"></td>
+                    <td data-th-text="${p.getEstablishmentType}"></td>
+                    <td data-th-text="${p.getNeighbourhood}"></td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- line break -->
+        <br>
+
+        <!-- content header -->
+        <div class="container mb-3 mt-3 ">
+            <figure class="text-end">
+                <blockquote class="blockquote">
+                    More information on recently added food place
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Data pulled from TIH api
+                </figcaption>
+              </figure>
+        </div>
+
+         <!-- content body -->
+         
 
 
     </body>

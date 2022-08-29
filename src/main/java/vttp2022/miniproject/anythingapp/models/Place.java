@@ -1,20 +1,22 @@
 package vttp2022.miniproject.anythingapp.models;
 
+import java.io.Reader;
+import java.io.StringReader;
+
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
+import jakarta.json.JsonReader;
 
-public class App {
+public class Place {
     
     String neighbourhood;
     String establishmentType;
     String establishmentName;
-    String userName;
 
-    public App(String neighbourhood, String establishmentType, String establishmentName, String userName) {
+    public Place(String neighbourhood, String establishmentType, String establishmentName) {
         this.neighbourhood = neighbourhood;
         this.establishmentType = establishmentType;
         this.establishmentName = establishmentName;
-        this.userName = userName;
     }
 
     public String getNeighbourhood() {
@@ -41,13 +43,6 @@ public class App {
         this.establishmentName = establishmentName;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     // to create jsonObject from model
     public JsonObject toJson() {
@@ -55,8 +50,23 @@ public class App {
                 .add("neighbourhood", neighbourhood)
                 .add("establishmentType", establishmentType)
                 .add("establishmentName", establishmentName)
-                .add("username", userName)
                 .build();
     }
+
+    // to create Place from payload(jsonStr)
+    // class level method, use static, call method using Place class
+    public static Place create(String jsonString) {
+		Reader reader = new StringReader(jsonString);
+		JsonReader jr = Json.createReader(reader);
+		JsonObject jo = jr.readObject();
+
+        String neighbourhood = jo.getString("neighbourhood");
+        String establishmentType = jo.getString("establishmentType");
+        String establishmentName = jo.getString("establishmentName");
+
+		Place place = new Place(neighbourhood, establishmentType, establishmentName);
+
+		return place;
+	}
 
 }
