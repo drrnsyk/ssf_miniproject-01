@@ -18,13 +18,14 @@ import vttp2022.miniproject.anythingapp.services.AnythingappService;
 
 @Controller
 @RequestMapping("/track")
-public class AnythingappController {
+public class AnythingappTrackController {
 
     @Autowired
     private AnythingappService anythingSvc;
 
     @GetMapping
-    public String getEntryName(@RequestParam String userName, Model model) {
+    public String getUserName(@RequestParam String userName, Model model) {
+        Place.userName = userName;
         model.addAttribute("userName", userName);
         return "track";
     }
@@ -51,9 +52,20 @@ public class AnythingappController {
         // generate the place model and send to repo 
         anythingSvc.saveToRepo(anythingSvc.generatePlace(neighbourhood, establishmentType, establishmentName), userName);
         
+        // retrive list of places from database
         List<Place> places = new LinkedList<>();
         places = anythingSvc.getFromRepo(userName);
-        model.addAttribute("places", places);
+        // filter to only display recent three places to be injected
+        List<Place> recentThreePlaces = new LinkedList<>();
+        long size = places.size();
+        long recentThree = 3;
+        if (size < 3) {
+            recentThree = size;
+        }
+        for (int i = 0; i < recentThree; i++) {
+            recentThreePlaces.add(places.get(i));
+        }
+        model.addAttribute("recentThreePlaces", recentThreePlaces);
 
         return "logsuccess";
 

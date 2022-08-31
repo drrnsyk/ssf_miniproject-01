@@ -42,14 +42,14 @@ public class AnythingappRepository {
         List<Place> places = new LinkedList<>();
 		ListOperations<String, String> listOps = template.opsForList();
 		long size = listOps.size(userName);
-        long topThree = 3;
 
-        if (size < 3) {
-            topThree = size;
-        }
+        // long topThree = 3;
+
+        // if (size < 3) {
+        //     topThree = size;
+        // }
         
-
-		for (long i = 0; i < topThree; i++) {
+		for (long i = 0; i < size; i++) {
 			String payloadStr = listOps.index(userName, i);
 			places.add(Place.create(payloadStr));
 		}

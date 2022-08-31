@@ -2,6 +2,7 @@ package vttp2022.miniproject.anythingapp.models;
 
 import java.io.Reader;
 import java.io.StringReader;
+import java.util.UUID;
 
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
@@ -9,14 +10,26 @@ import jakarta.json.JsonReader;
 
 public class Place {
     
-    String neighbourhood;
-    String establishmentType;
-    String establishmentName;
+    public static String userName;
+
+    private String id;
+    private String neighbourhood;
+    private String establishmentType;
+    private String establishmentName;
 
     public Place(String neighbourhood, String establishmentType, String establishmentName) {
+        this.id = UUID.randomUUID().toString().substring(0, 8);
         this.neighbourhood = neighbourhood;
         this.establishmentType = establishmentType;
         this.establishmentName = establishmentName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNeighbourhood() {
