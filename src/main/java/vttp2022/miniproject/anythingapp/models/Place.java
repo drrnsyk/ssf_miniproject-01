@@ -24,6 +24,13 @@ public class Place {
         this.establishmentName = establishmentName;
     }
 
+    public Place(String id, String neighbourhood, String establishmentType, String establishmentName) {
+        this.id = id;
+        this.neighbourhood = neighbourhood;
+        this.establishmentType = establishmentType;
+        this.establishmentName = establishmentName;
+    }
+
     public String getId() {
         return id;
     }
@@ -60,6 +67,7 @@ public class Place {
     // to create jsonObject from model
     public JsonObject toJson() {
         return Json.createObjectBuilder()
+                .add("id", id)
                 .add("neighbourhood", neighbourhood)
                 .add("establishmentType", establishmentType)
                 .add("establishmentName", establishmentName)
@@ -73,11 +81,12 @@ public class Place {
 		JsonReader jr = Json.createReader(reader);
 		JsonObject jo = jr.readObject();
 
+        String id = jo.getString("id");
         String neighbourhood = jo.getString("neighbourhood");
         String establishmentType = jo.getString("establishmentType");
         String establishmentName = jo.getString("establishmentName");
 
-		Place place = new Place(neighbourhood, establishmentType, establishmentName);
+		Place place = new Place(id, neighbourhood, establishmentType, establishmentName);
 
 		return place;
 	}

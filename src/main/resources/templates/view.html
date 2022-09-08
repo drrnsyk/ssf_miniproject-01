@@ -42,7 +42,7 @@
                 <figcaption class="blockquote-footer">
                     <a data-th-href="@{/track(userName=${userName})}">Click here to continue logging</a>
                 </figcaption>
-              </figure>
+            </figure>
         </div>
 
         <!-- line break -->
@@ -50,7 +50,7 @@
     
         <!-- content body -->
         <div class="container border">
-            <H3>List of food log entries</H3>
+            <H3>View all entries</H3>
             <table class="table table-hover">
                 <thead>
                   <tr>
@@ -70,8 +70,8 @@
                     <td data-th-text="${p.getEstablishmentName}"></td>
                     <td data-th-text="${p.getEstablishmentType}"></td>
                     <td data-th-text="${p.getNeighbourhood}"></td>
-                    <td >Edit</td>
-                    <td >Delete</td>
+                    <td><a data-th-href="@{/view/edit/{id}(id=${p.id})}">Edit</a></td>
+                    <td><a data-th-href="@{/view/delete/{id}(id=${p.id})}">Delete</a></td>
                   </tr>
                 </tbody>
             </table>

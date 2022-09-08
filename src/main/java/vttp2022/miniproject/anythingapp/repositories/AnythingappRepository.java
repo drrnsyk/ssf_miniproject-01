@@ -58,5 +58,24 @@ public class AnythingappRepository {
 
     }
 
+    public void updateToRedis(List<Place> places, String userName) {
+
+        // get username from input to store in redis as keys
+        String jsonObjectName = userName;
+
+        // delete key and its corresponding data
+        template.delete(userName);
+
+        // declare the redis list
+        ListOperations<String, String> listOps = template.opsForList();
+		
+        // adding by the back 
+        for (int i = 0; i < places.size(); i++) {
+            listOps.leftPush(jsonObjectName, places.get(i).toJson().toString());
+        }
+		
+        
+    }
+
 
 }

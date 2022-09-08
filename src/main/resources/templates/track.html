@@ -42,54 +42,54 @@
                 <figcaption class="blockquote-footer">
                     Start logging
                 </figcaption>
-              </figure>
+            </figure>
         </div>
 
         <!-- food log entry -->
         <div class="container">
             <form method="POST" action="/track">
-                <div class="mb-3 mt-3">
-                  <label for="neighbourhood" class="form-label">Neighbourhood:</label>
-                  <br>
-                  <select name="neighbourhood" id="neighbourhood" style="width:100%">
-                    <option value="Admiralty">Admiralty</option>
-                    <option value="Alexandra Hill">Alexandra Hill</option>
-                    <option value="Alexandra North">Alexandra North</option>
-                    <option value="Anak Bukit">Anak Bukit</option>
-                    <option value="Ang Mo Kio">Ang Mo Kio</option>
-                    <option value="Anson">Anson</option>
-                    <option value="Arab Street">Arab Street</option>
-                  </select>
+              <div class="mb-3 mt-3">
+                <label for="neighbourhood" class="form-label">Neighbourhood:</label>
+                <br>
+                <select name="neighbourhood" id="neighbourhood" style="width:100%">
+                  <option value="Admiralty">Admiralty</option>
+                  <option value="Alexandra Hill">Alexandra Hill</option>
+                  <option value="Alexandra North">Alexandra North</option>
+                  <option value="Anak Bukit">Anak Bukit</option>
+                  <option value="Ang Mo Kio">Ang Mo Kio</option>
+                  <option value="Anson">Anson</option>
+                  <option value="Arab Street">Arab Street</option>
+                </select>
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="establishmentType" class="form-label">Establishment Type:</label>
+                <br>
+                <select name="establishmentType" id="establishmentType" style="width:100%">
+                  <option value="Restaurant">Restaurant</option>
+                  <option value="Cafe">Cafe</option>
+                  <option value="Bar & Pub">Bar & Pub</option>
+                  <option value="Hawker">Hawker</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="mb-3 mt-3">
+                  <label for="establishmentName" class="form-label">Establishment Name:</label>
+                  <input required type="text" class="form-control" id="establishmentName" placeholder="Enter establishment name" name="establishmentName">
+                </div>
+                <!-- <div class="mb-3 mt-3">
+                  <label for="favouriteFood" class="form-label">Favourite Food:</label>
+                  <input type="text" class="form-control" id="favouriteFood" placeholder="Enter favourite food" name="favouriteFood">
                 </div>
                 <div class="mb-3 mt-3">
-                  <label for="establishmentType" class="form-label">Establishment Type:</label>
-                  <br>
-                  <select name="establishmentType" id="establishmentType" style="width:100%">
-                    <option value="Restaurant">Restaurant</option>
-                    <option value="Cafe">Cafe</option>
-                    <option value="Bar & Pub">Bar & Pub</option>
-                    <option value="Hawker">Hawker</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
+                  <label for="seatingType" class="form-label">Seating Type:</label>
+                  <input type="text" class="form-control" id="seatingType" placeholder="Enter seating type" name="seatingType">
+                </div> -->
                 <div class="mb-3 mt-3">
-                    <label for="establishmentName" class="form-label">Establishment Name:</label>
-                    <input required type="text" class="form-control" id="establishmentName" placeholder="Enter establishment name" name="establishmentName">
-                  </div>
-                  <!-- <div class="mb-3 mt-3">
-                    <label for="favouriteFood" class="form-label">Favourite Food:</label>
-                    <input type="text" class="form-control" id="favouriteFood" placeholder="Enter favourite food" name="favouriteFood">
-                  </div>
-                  <div class="mb-3 mt-3">
-                    <label for="seatingType" class="form-label">Seating Type:</label>
-                    <input type="text" class="form-control" id="seatingType" placeholder="Enter seating type" name="seatingType">
-                  </div> -->
-                  <div class="mb-3 mt-3">
-                    <label for="userName" class="form-label">Username:</label>
-                    <input readonly type="text" class="form-control" id="userName" name="userName" data-th-value="${userName}">
-                  </div>
-                <button type="submit" class="btn btn-primary">Log it!</button>
-              </form>
+                  <label for="userName" class="form-label">Username:</label>
+                  <input readonly type="text" class="form-control" id="userName" name="userName" data-th-value="${userName}">
+                </div>
+              <button type="submit" class="btn btn-primary">Log it!</button>
+            </form>
         </div>
 
     </body>

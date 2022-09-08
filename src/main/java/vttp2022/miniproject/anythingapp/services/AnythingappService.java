@@ -29,4 +29,20 @@ public class AnythingappService {
         return opt.get();
     }
 
+    public Place findById(String id, List<Place> places) {
+
+        for (int i = 0; i < places.size(); i++) {
+            if (places.get(i).getId().equalsIgnoreCase(id)) {
+                return places.get(i);
+            }
+        }
+
+        return null;
+
+    }
+
+    public void updateToRepo(List<Place> places, String userName) {
+        anythingRepo.updateToRedis(places, userName);
+    }
+
 }
