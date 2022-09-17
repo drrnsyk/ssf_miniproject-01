@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <title>Eat</title>
+    </head>
+
+    <body>
+        <!-- page header -->
+        <div class="d-flex justify-content-center 
+                    text-uppercase 
+                    p-3 bg-light text-dark 
+                    ">
+            <h1>Anything La</h1>
+        </div>
+
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light 
+                    nav justify-content-center
+                    ">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" data-th-href="@{/track(userName=${userName})}">Track Everything</a>
+                <a class="nav-item nav-link" href="/eat">Eat Anything</a>
+                <a class="nav-item nav-link" href="/cook">Cook Anything</a>
+                <a class="nav-item nav-link" href="/view">View Everything</a>
+            </div>
+        </nav>
+
+        <!-- line break -->
+        <br>
+
+        <!-- content header -->
+        <div class="container mb-3 mt-3">
+            <figure class="text-end">
+                <blockquote class="blockquote">
+                  Welcome <span data-th-text="${userName}"></span> to your food journal
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Don't know what to eat today?
+                </figcaption>
+            </figure>
+        </div>
+
+        <!-- content -->
+        <div class="container">
+            <form method="GET" action="/eat/random">
+              <div class="mb-3 mt-3">
+                <label for="neighbourhood" class="form-label">Neighbourhood:</label>
+                <br>
+                <select name="neighbourhood" id="neighbourhood" style="width:100%">
+                    <option value="Nil">No Preference</option>
+                    <option value="Admiralty">Admiralty</option>
+                    <option value="Alexandra Hill">Alexandra Hill</option>
+                    <option value="Alexandra North">Alexandra North</option>
+                    <option value="Anak Bukit">Anak Bukit</option>
+                    <option value="Ang Mo Kio">Ang Mo Kio</option>
+                    <option value="Anson">Anson</option>
+                    <option value="Balestier">Balestier</option>
+                    <option value="Bangkit">Bangkit</option>
+                    <option value="Bayfront">Bayfront</option>
+                    <option value="Bayshore">Bayshore</option>
+                    <option value="Bedok">Bedok</option>
+                    <option value="Bedok North">Bedok North</option>
+                    <option value="Bedok Reservoir">Bedok Reservoir</option>
+                    <option value="Bedok South">Bedok South</option>
+                    <option value="Bencoolen">Bencoolen</option>
+                    <option value="Bendemeer">Bendemeer</option>
+                    <option value="Bishan">Bishan</option>
+                    <option value="Bishan East">Bishan East</option>
+                    <option value="Boat Quay">Boat Quay</option>
+                    <option value="Boon Keng">Boon Keng</option>
+                    <option value="Boon Lay">Boon Lay</option>
+                    <option value="Boon Lay Place">Boon Lay Place</option>
+                    <option value="Boon Teck">Boon Teck</option>
+                    <option value="Boulevard">Boulevard</option>
+                    <option value="Braddell">Braddell</option>
+                    <option value="Bras Basah">Bras Basah</option>
+                    <option value="Brickworks">Brickworks</option>
+                    <option value="Bugis">Bugis</option>
+                    <option value="Bukit Batok">Bukit Batok</option>
+                    <option value="Bukit Batok Central">Bukit Batok Central</option>
+                    <option value="Bukit Batok East">Bukit Batok East</option>
+                    <option value="Bukit Batok South">Bukit Batok South</option>
+                    <option value="Bukit Batok West">Bukit Batok West</option>
+                    <option value="Bukit Ho Swee">Bukit Ho Swee</option>
+                    <option value="Bukit Merah">Bukit Merah</option>
+                    <option value="Bukit Panjang">Bukit Panjang</option>
+                    <option value="Bukit Timah">Bukit Timah</option>
+                    <option value="Cairnhill">Cairnhill</option>
+                    <option value="Cecil">Cecil</option>
+                    <option value="Central">Central</option>
+                    <option value="Central">Central</option>
+                    <option value="Central Area/City Area">Central Area/City Area</option>
+                    <option value="Central Business District">Central Business District</option>
+                    <option value="Central Water Catchment">Central Water Catchment</option>
+                    <option value="Changi">Changi</option>
+                    <option value="Changi Bay">Changi Bay</option>
+                    <option value="Changi Business Park">Changi Business Park</option>
+                    <option value="Changi Point">Changi Point</option>
+                    <option value="Changi Village">Changi Village</option>
+                    <option value="Changi West">Changi West</option>
+                    <option value="Chatsworth">Chatsworth</option>
+                    <option value="Cheng San">Cheng San</option>
+                    <option value="Chin Bee">Chin Bee</option>
+                    <option value="China Square">China Square</option>
+                    <option value="Chinatown">Chinatown</option>
+                    <option value="Choa Chu Kang">Choa Chu Kang</option>
+                    <option value="Chong Boon">Chong Boon</option>
+                    <option value="City Hall">City Hall</option>
+                    <option value="Clarke Quay">Clarke Quay</option>
+                    <option value="Clementi">Clementi</option>
+                    <option value="Clementi Central">Clementi Central</option>
+                    <option value="Clementi North">Clementi North</option>
+                    <option value="Clementi West">Clementi West</option>
+                    <option value="Clementi Woods">Clementi Woods</option>
+                    <option value="Clifford Pier">Clifford Pier</option>
+                    <option value="Colonial District/Civic District">Colonial District/Civic District</option>
+                    <option value="Commonwealth">Commonwealth</option>
+                    <option value="Compassvale">Compassvale</option>
+                    <option value="Coronation Road">Coronation Road</option>
+                    <option value="Crawford">Crawford</option>
+                    <option value="Dairy Farm">Dairy Farm</option>
+                    <option value="Defu Industrial Park">Defu Industrial Park</option>
+                    <option value="Dempsey Hill">Dempsey Hill</option>
+                    <option value="Depot Road">Depot Road</option>
+                    <option value="Dhoby Ghaut">Dhoby Ghaut</option>
+                    <option value="Dover">Dover</option>
+                    <option value="Downtown Core/Downtown Singapore">Downtown Core/Downtown Singapore</option>
+                    <option value="Dunearn">Dunearn</option>
+                    <option value="Duxton Hill">Duxton Hill</option>
+                    <option value="East Coast">East Coast</option>
+                    <option value="Emerald Hill">Emerald Hill</option>
+                    <option value="Everton Park">Everton Park</option>
+                    <option value="Faber">Faber</option>
+                    <option value="Fajar">Fajar</option>
+                    <option value="Farrer Court">Farrer Court</option>
+                    <option value="Farrer Park">Farrer Park</option>
+                    <option value="Fernvale">Fernvale</option>
+                    <option value="Flora Drive">Flora Drive</option>
+                    <option value="Fort Canning">Fort Canning</option>
+                    <option value="Frankel">Frankel</option>
+                    <option value="Geylang">Geylang</option>
+                    <option value="Geylang Bahru">Geylang Bahru</option>
+                    <option value="Geylang East">Geylang East</option>
+                    <option value="Ghim Moh">Ghim Moh</option>
+                    <option value="Gombak">Gombak</option>
+                    <option value="Goodwood Park">Goodwood Park</option>
+                    <option value="Greenwood Park">Greenwood Park</option>
+                    <option value="Guilin">Guilin</option>
+                    <option value="Gul Basin">Gul Basin</option>
+                    <option value="Harbourfront">Harbourfront</option>
+                    <option value="Henderson Hill">Henderson Hill</option>
+                    <option value="Hillcrest">Hillcrest</option>
+                    <option value="Hillview">Hillview</option>
+                    <option value="Holland Drive">Holland Drive</option>
+                    <option value="Holland Road">Holland Road</option>
+                    <option value="Holland Village">Holland Village</option>
+                    <option value="Hong Kah North">Hong Kah North</option>
+                    <option value="Hong Kah South">Hong Kah South</option>
+                    <option value="Hougang">Hougang</option>
+                    <option value="Hougang Central">Hougang Central</option>
+                    <option value="Institution Hill">Institution Hill</option>
+                    <option value="International Business Park">International Business Park</option>
+                    <option value="Istana Negara">Istana Negara</option>
+                    <option value="Jalan Besar">Jalan Besar</option>
+                    <option value="Joo Chiat">Joo Chiat</option>
+                    <option value="Joo Koon">Joo Koon</option>
+                    <option value="Joo Seng">Joo Seng</option>
+                    <option value="Jurong East">Jurong East</option>
+                    <option value="Jurong Island">Jurong Island</option>
+                    <option value="Jurong Lake">Jurong Lake</option>
+                    <option value="Jurong Port">Jurong Port</option>
+                    <option value="Jurong Regional Centre">Jurong Regional Centre</option>
+                    <option value="Jurong West">Jurong West</option>
+                    <option value="Jurong West Central">Jurong West Central</option>
+                    <option value="Kaki Bukit">Kaki Bukit</option>
+                    <option value="Kallang">Kallang</option>
+                    <option value="Kallang Bahru">Kallang Bahru</option>
+                    <option value="Kallang Way">Kallang Way</option>
+                    <option value="Kampong Bugis">Kampong Bugis</option>
+                    <option value="Kampong Glam">Kampong Glam</option>
+                    <option value="Kampong Java">Kampong Java</option>
+                    <option value="Kampong Tiong Bahru">Kampong Tiong Bahru</option>
+                    <option value="Kampong Ubi">Kampong Ubi</option>
+                    <option value="Katong">Katong</option>
+                    <option value="Keat Hong">Keat Hong</option>
+                    <option value="Kebun Bahru">Kebun Bahru</option>
+                    <option value="Kembangan">Kembangan</option>
+                    <option value="Kent Ridge">Kent Ridge</option>
+                    <option value="Khatib">Khatib</option>
+                    <option value="Kian Teck">Kian Teck</option>
+                    <option value="Kim Keat">Kim Keat</option>
+                    <option value="Kranji North">Kranji North</option>
+                    <option value="Lavender">Lavender</option>
+                    <option value="Leedon Park">Leedon Park</option>
+                    <option value="Leonie Hill">Leonie Hill</option>
+                    <option value="Lim Chu Kang">Lim Chu Kang</option>
+                    <option value="Little India">Little India</option>
+                    <option value="Liu Fang">Liu Fang</option>
+                    <option value="Lorong 8 Toa Payoh">Lorong 8 Toa Payoh</option>
+                    <option value="Lorong Ah Soo">Lorong Ah Soo</option>
+                    <option value="Lower Seletar">Lower Seletar</option>
+                    <option value="Loyang East">Loyang East</option>
+                    <option value="Loyang West">Loyang West</option>
+                    <option value="Mackenzie">Mackenzie</option>
+                    <option value="Macpherson">Macpherson</option>
+                    <option value="Malcolm">Malcolm</option>
+                    <option value="Mandai">Mandai</option>
+                    <option value="Mandai East">Mandai East</option>
+                    <option value="Mandai Estate">Mandai Estate</option>
+                    <option value="Mandai West">Mandai West</option>
+                    <option value="Margaret Drive">Margaret Drive</option>
+                    <option value="Marina Bay">Marina Bay</option>
+                    <option value="Marina Centre">Marina Centre</option>
+                    <option value="Marina East">Marina East</option>
+                    <option value="Marina South">Marina South</option>
+                    <option value="Marine Parade">Marine Parade</option>
+                    <option value="Maritime Square">Maritime Square</option>
+                    <option value="Marymount">Marymount</option>
+                    <option value="Matilda">Matilda</option>
+                    <option value="Maxwell">Maxwell</option>
+                    <option value="Mei Chin">Mei Chin</option>
+                    <option value="Midview">Midview</option>
+                    <option value="Monk's Hill">Monk's Hill</option>
+                    <option value="Moulmein">Moulmein</option>
+                    <option value="Mount Emily">Mount Emily</option>
+                    <option value="Mount Faber Park">Mount Faber Park</option>
+                    <option value="Mount Pleasant">Mount Pleasant</option>
+                    <option value="Mountbatten">Mountbatten</option>
+                    <option value="Museum">Museum</option>
+                    <option value="Nassim">Nassim</option>
+                    <option value="National University of Singapore">National University of Singapore</option>
+                    <option value="Nature Reserve">Nature Reserve</option>
+                    <option value="Nee Soon">Nee Soon</option>
+                    <option value="Newton">Newton</option>
+                    <option value="Newton Circus">Newton Circus</option>
+                    <option value="North Coast">North Coast</option>
+                    <option value="Northland">Northland</option>
+                    <option value="Northshore">Northshore</option>
+                    <option value="Novena">Novena</option>
+                    <option value="One North">One North</option>
+                    <option value="One Tree Hill">One Tree Hill</option>
+                    <option value="Orange Grove">Orange Grove</option>
+                    <option value="Orchard">Orchard</option>
+                    <option value="Orchard Road">Orchard Road</option>
+                    <option value="Outram">Outram</option>
+                    <option value="Oxley">Oxley</option>
+                    <option value="Pandan">Pandan</option>
+                    <option value="Pang Sua">Pang Sua</option>
+                    <option value="Pasir Panjang 1">Pasir Panjang 1</option>
+                    <option value="Pasir Panjang 2">Pasir Panjang 2</option>
+                    <option value="Pasir Ris">Pasir Ris</option>
+                    <option value="Pasir Ris Central">Pasir Ris Central</option>
+                    <option value="Pasir Ris Park">Pasir Ris Park</option>
+                    <option value="Pasir Ris Wafer Fab Park">Pasir Ris Wafer Fab Park</option>
+                    <option value="Pasir Ris West">Pasir Ris West</option>
+                    <option value="Paterson">Paterson</option>
+                    <option value="Paya Lebar">Paya Lebar</option>
+                    <option value="Paya Lebar East">Paya Lebar East</option>
+                    <option value="Paya Lebar North">Paya Lebar North</option>
+                    <option value="Pearl's Hill">Pearl's Hill</option>
+                    <option value="Pei Chun">Pei Chun</option>
+                    <option value="Peng Siang">Peng Siang</option>
+                    <option value="Penjuru Crescent">Penjuru Crescent</option>
+                    <option value="People's Park">People's Park</option>
+                    <option value="Phillip">Phillip</option>
+                    <option value="Pioneer">Pioneer</option>
+                    <option value="Port">Port</option>
+                    <option value="Potong Pasir">Potong Pasir</option>
+                    <option value="Punggol">Punggol</option>
+                    <option value="Punggol Field">Punggol Field</option>
+                    <option value="Punggol Town Centre">Punggol Town Centre</option>
+                    <option value="Queenstown">Queenstown</option>
+                    <option value="Queensway">Queensway</option>
+                    <option value="Raffles Place">Raffles Place</option>
+                    <option value="Red Light District">Red Light District</option>
+                    <option value="Redhill">Redhill</option>
+                    <option value="Reservoir View">Reservoir View</option>
+                    <option value="Ridout">Ridout</option>
+                    <option value="River Valley">River Valley</option>
+                    <option value="Rivervale">Rivervale</option>
+                    <option value="Robertson Quay">Robertson Quay</option>
+                    <option value="Rochor">Rochor</option>
+                    <option value="Rochor Canal">Rochor Canal</option>
+                    <option value="Rosyth">Rosyth</option>
+                    <option value="Safti">Safti</option>
+                    <option value="Saujana">Saujana</option>
+                    <option value="Selegie">Selegie</option>
+                    <option value="Seletar">Seletar</option>
+                    <option value="Seletar Hills">Seletar Hills</option>
+                    <option value="Sembawang">Sembawang</option>
+                    <option value="Sembawang Central">Sembawang Central</option>
+                    <option value="Sembawang East">Sembawang East</option>
+                    <option value="Sembawang Hills">Sembawang Hills</option>
+                    <option value="Sembawang North">Sembawang North</option>
+                    <option value="Sembawang Springs">Sembawang Springs</option>
+                    <option value="Sembawang Straits">Sembawang Straits</option>
+                    <option value="Sengkang">Sengkang</option>
+                    <option value="Sengkang Town Centre">Sengkang Town Centre</option>
+                    <option value="Sengkang West">Sengkang West</option>
+                    <option value="Sennett">Sennett</option>
+                    <option value="Senoko North">Senoko North</option>
+                    <option value="Senoko South">Senoko South</option>
+                    <option value="Senoko West">Senoko West</option>
+                    <option value="Sentosa Island">Sentosa Island</option>
+                    <option value="Serangoon Central">Serangoon Central</option>
+                    <option value="Serangoon Garden">Serangoon Garden</option>
+                    <option value="Serangoon North">Serangoon North</option>
+                    <option value="Shangri-La">Shangri-La</option>
+                    <option value="Shenton Way">Shenton Way</option>
+                    <option value="Shipyard">Shipyard</option>
+                    <option value="Siglap">Siglap</option>
+                    <option value="Simei">Simei</option>
+                    <option value="Sindo">Sindo</option>
+                    <option value="Singapore General Hospital">Singapore General Hospital</option>
+                    <option value="Singapore Polytechnic">Singapore Polytechnic</option>
+                    <option value="Singapore River/Riverside">Singapore River/Riverside</option>
+                    <option value="Somerset">Somerset</option>
+                    <option value="Southern Islands">Southern Islands</option>
+                    <option value="Springleaf">Springleaf</option>
+                    <option value="Straits View">Straits View</option>
+                    <option value="Sungei Kadut">Sungei Kadut</option>
+                    <option value="Sungei Road">Sungei Road</option>
+                    <option value="Sunset Way">Sunset Way</option>
+                    <option value="Swiss Club">Swiss Club</option>
+                    <option value="Tai Keng">Tai Keng</option>
+                    <option value="Taman Jurong">Taman Jurong</option>
+                    <option value="Tampines">Tampines</option>
+                    <option value="Tampines East">Tampines East</option>
+                    <option value="Tampines North">Tampines North</option>
+                    <option value="Tampines West">Tampines West</option>
+                    <option value="Tanglin">Tanglin</option>
+                    <option value="Tanglin Halt">Tanglin Halt</option>
+                    <option value="Tanjong Pagar">Tanjong Pagar</option>
+                    <option value="Tanjong Pagar">Tanjong Pagar</option>
+                    <option value="Tanjong Rhu">Tanjong Rhu</option>
+                    <option value="Teban Gardens">Teban Gardens</option>
+                    <option value="Teck Whye">Teck Whye</option>
+                    <option value="Telok Blangah Drive">Telok Blangah Drive</option>
+                    <option value="Telok Blangah Rise">Telok Blangah Rise</option>
+                    <option value="Telok Blangah Way">Telok Blangah Way</option>
+                    <option value="Tengah">Tengah</option>
+                    <option value="The Quays">The Quays</option>
+                    <option value="The Wharves">The Wharves</option>
+                    <option value="Thomson Road">Thomson Road</option>
+                    <option value="Tiong Bahru">Tiong Bahru</option>
+                    <option value="Tiong Bahru Station">Tiong Bahru Station</option>
+                    <option value="Toa Payoh">Toa Payoh</option>
+                    <option value="Toa Payoh Central">Toa Payoh Central</option>
+                    <option value="Toa Payoh West">Toa Payoh West</option>
+                    <option value="Toh Guan">Toh Guan</option>
+                    <option value="Toh Tuck">Toh Tuck</option>
+                    <option value="Townsville">Townsville</option>
+                    <option value="Trafalgar">Trafalgar</option>
+                    <option value="Tuas">Tuas</option>
+                    <option value="Tuas Bay">Tuas Bay</option>
+                    <option value="Tuas North">Tuas North</option>
+                    <option value="Tuas Promenade">Tuas Promenade</option>
+                    <option value="Tuas View">Tuas View</option>
+                    <option value="Tukang">Tukang</option>
+                    <option value="Turf Club">Turf Club</option>
+                    <option value="Tyersall">Tyersall</option>
+                    <option value="Ulu Pandan">Ulu Pandan</option>
+                    <option value="Upper Thomson">Upper Thomson</option>
+                    <option value="Victoria">Victoria</option>
+                    <option value="Waterway East">Waterway East</option>
+                    <option value="Wenya">Wenya</option>
+                    <option value="West Coast">West Coast</option>
+                    <option value="Western Islands">Western Islands</option>
+                    <option value="Western Water Catchment">Western Water Catchment</option>
+                    <option value="Woodgrove">Woodgrove</option>
+                    <option value="Woodlands">Woodlands</option>
+                    <option value="Woodlands East">Woodlands East</option>
+                    <option value="Woodlands Regional Centre">Woodlands Regional Centre</option>
+                    <option value="Woodlands South">Woodlands South</option>
+                    <option value="Woodlands West">Woodlands West</option>
+                    <option value="Xilin">Xilin</option>
+                    <option value="Yew Tee">Yew Tee</option>
+                    <option value="Yio Chu Kang">Yio Chu Kang</option>
+                    <option value="Yishun">Yishun</option>
+                    <option value="Yishun Central">Yishun Central</option>
+                    <option value="Yishun East">Yishun East</option>
+                    <option value="Yishun South">Yishun South</option>
+                    <option value="Yishun West">Yishun West</option>
+                    <option value="Yuhua">Yuhua</option>
+                    <option value="Yuhua West">Yuhua West</option>
+                    <option value="Yunnan">Yunnan</option>
+                </select>
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="establishmentType" class="form-label">Establishment Type:</label>
+                <br>
+                <select name="establishmentType" id="establishmentType" style="width:100%">
+                    <option value="Nil">No preference</option>
+                    <option value="Restaurant">Restaurant</option>
+                    <option value="Cafe">Cafe</option>
+                    <option value="Bar & Pub">Bar & Pub</option>
+                    <option value="Hawker">Hawker</option>
+                    <option value="Other">Other</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Tell me what to eat!</button>
+            </form>
+        </div>
+
+
+    </body>
+</html>
