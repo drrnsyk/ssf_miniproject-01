@@ -25,7 +25,6 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" data-th-href="@{/track(userName=${userName})}">Track Everything</a>
                 <a class="nav-item nav-link" href="/eat">Eat Anything</a>
-                <a class="nav-item nav-link" href="/cook">Cook Anything</a>
                 <a class="nav-item nav-link" href="/view">View Everything</a>
             </div>
         </nav>
@@ -37,10 +36,10 @@
         <div class="container mb-3 mt-3">
             <figure class="text-end">
                 <blockquote class="blockquote">
-                  Welcome <span data-th-text="${userName}"></span> to your food journal
+                  Welcome <span data-th-text="${userName}"></span>, what do you want to eat?
                 </blockquote>
                 <figcaption class="blockquote-footer">
-                    Don't know what to eat today?
+                    Let's generate something for you..
                 </figcaption>
             </figure>
         </div>

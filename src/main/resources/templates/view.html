@@ -25,7 +25,6 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" data-th-href="@{/track(userName=${userName})}">Track Everything</a>
                 <a class="nav-item nav-link" href="/eat">Eat Anything</a>
-                <a class="nav-item nav-link" href="/cook">Cook Anything</a>
                 <a class="nav-item nav-link" href="/view">View Everything</a>
             </div>
         </nav>
@@ -37,10 +36,10 @@
         <div class="container mb-3 mt-3 ">
             <figure class="text-end">
                 <blockquote class="blockquote">
-                    Welcome <span data-th-text="${userName}"></span> to your food journal
+                    Welcome <span data-th-text="${userName}"></span>, what are you viewing?
                 </blockquote>
                 <figcaption class="blockquote-footer">
-                    <a data-th-href="@{/track(userName=${userName})}">Click here to continue logging</a>
+                    <a data-th-href="@{/track(userName=${userName})}">Click here to log more places</a>
                 </figcaption>
             </figure>
         </div>
@@ -49,18 +48,19 @@
         <br>
     
         <!-- content body -->
-        <div class="container border">
+        <div class="container table-responsive">
             <H3>View all entries</H3>
             <table class="table table-hover">
                 <thead>
                   <tr>
                     <th scope="col">S/N</th>
-                    <th scope="col">Unique ID</th>
-                    <th scope="col">Establishment Name</th>
-                    <th scope="col">Establisyhment Type</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">E.Name</th>
+                    <th scope="col">E.Type</th>
                     <th scope="col">Neighbourhood</th>
                     <th scope="col">Update</th>
                     <th scope="col">Delete</th>
+                    <th scope="col">Get Reviews</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -72,6 +72,7 @@
                     <td data-th-text="${p.getNeighbourhood}"></td>
                     <td><a data-th-href="@{/view/edit/{id}(id=${p.id})}">Edit</a></td>
                     <td><a data-th-href="@{/view/delete/{id}(id=${p.id})}">Delete</a></td>
+                    <td><a data-th-href="@{/view/reviews/{establishmentName}(establishmentName=${p.establishmentName})}">Get Reviews</a></td>
                   </tr>
                 </tbody>
             </table>

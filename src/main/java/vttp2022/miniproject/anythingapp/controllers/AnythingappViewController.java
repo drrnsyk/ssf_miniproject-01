@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import vttp2022.miniproject.anythingapp.models.Place;
+import vttp2022.miniproject.anythingapp.models.Review;
 import vttp2022.miniproject.anythingapp.services.AnythingappService;
 
 @Controller
@@ -120,6 +121,22 @@ public class AnythingappViewController {
         model.addAttribute("places", places);
         
         return "redirect:/view";
+    }
+
+    @GetMapping(value="/reviews/{establishmentName}")
+    public String getReviews(@PathVariable(value="establishmentName") String establishmentName, Model model) {
+
+        String userName = Place.userName;
+        List<Review> listOfReviews = new LinkedList<>();
+        listOfReviews = anythingSvc.getReviews(establishmentName);
+
+        model.addAttribute("userName", userName);
+        model.addAttribute("establishmentName", establishmentName);
+        model.addAttribute("listOfReviews", listOfReviews);
+        model.addAttribute("overallRating", listOfReviews.get(0).getOverallRating());
+       
+        return "review";
+
     }
 
 }
