@@ -20,6 +20,7 @@ import jakarta.json.Json;
 import jakarta.json.JsonArray;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonReader;
+import vttp2022.miniproject.anythingapp.models.Contribution;
 import vttp2022.miniproject.anythingapp.models.Place;
 import vttp2022.miniproject.anythingapp.models.Review;
 import vttp2022.miniproject.anythingapp.repositories.AnythingappRepository;
@@ -106,10 +107,9 @@ public class AnythingappService {
             review.setTime(jo.getString("time"));
             review.setProfilePhotoUrl(jo.getString("profilePhoto"));
             list.add(review);
-            // list.add(Articles.create(dataJsonObject));
         }
 
-        System.out.println("This is the size of list of reviews: " + list.size());
+        // System.out.println("This is the size of list of reviews: " + list.size());
 
         return list;
         
@@ -144,6 +144,11 @@ public class AnythingappService {
 
     public void updateToRepo(List<Place> places, String userName) {
         anythingRepo.updateToRedis(places, userName);
+    }
+
+    public Contribution generateContribution(String establishmentName, String establishmentType, String rating, String review, String address, String postal, String name, String source) {
+        Contribution contribution = new Contribution(establishmentName, establishmentType, rating, review, address, postal, name, source);
+        return contribution;
     }
 
 }

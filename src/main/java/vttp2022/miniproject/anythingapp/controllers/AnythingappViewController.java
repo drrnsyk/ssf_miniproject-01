@@ -126,12 +126,26 @@ public class AnythingappViewController {
     @GetMapping(value="/reviews/{establishmentName}")
     public String getReviews(@PathVariable(value="establishmentName") String establishmentName, Model model) {
 
+        Boolean isSameEstablishment = false;
         String userName = Place.userName;
+        String establishmentType = "";
         List<Review> listOfReviews = new LinkedList<>();
         listOfReviews = anythingSvc.getReviews(establishmentName);
+        List<Place> places = new LinkedList<>();
+        places = anythingSvc.getFromRepo(userName);
+        for (int i = 0; i < places.size(); i++) {
+            if (places.get(i).getEstablishmentName().equalsIgnoreCase(establishmentName)) {
+                establishmentType = places.get(i).getEstablishmentType();
+            }
+        }
+
+        if (listOfReviews.get(0).getEstablishmentName().equalsIgnoreCase(establishmentName))
+            isSameEstablishment = true;
 
         model.addAttribute("userName", userName);
         model.addAttribute("establishmentName", establishmentName);
+        model.addAttribute("establishmentType", establishmentType);
+        model.addAttribute("isSameEstablishment", isSameEstablishment);
         model.addAttribute("listOfReviews", listOfReviews);
         model.addAttribute("overallRating", listOfReviews.get(0).getOverallRating());
        
