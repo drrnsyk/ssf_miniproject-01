@@ -9,40 +9,76 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Home Page</title>
         <style>
+            body {
+                background-image: url('indexFoodBackground.jpg');
+                background-repeat: no-repeat;
+                background-size: 100% 225%;
+            }
             .list-unstyled {
-              text-align: left;
+                text-align: left;
             }
             .left {
-              text-align: left;
+                text-align: left;
+            }
+
+            .bubble {
+                position: relative;
+                background: linear-gradient(-7deg, #d6dadf 55%, #ababab 100%);
+                color: #080808;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 70px;
+                line-height: 118px;
+                filter: drop-shadow(11px 12px 11px #5c5757);
+                text-align: center;
+                width: 700px;
+                height: 111px;
+                border-radius: 25px;
+                padding: 0px;
+            }
+            .bubble:after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 0;
+                z-index: 1;
+                border-style: solid;
+                border-width: 32px 56px 0 0;
+                border-color: #d6dce3 transparent transparent transparent;
+                bottom: -32px;
+                left: 14%;
+                margin-left: -28px;
             }
           </style>
     </head>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <span></span>
-          <a class="navbar-brand" href="/">Logout</a>
-        </div>
-    </nav>
-
     <body>
+
+        <br>
+
         <!-- page header -->
-        <div class="d-flex justify-content-center 
+        <!-- <div class="d-flex justify-content-center 
                     text-uppercase 
-                    p-3 bg-light text-dark 
+                    p-3
                     ">
             <h1>Anything La</h1>
+        </div> -->
+        <div class="d-flex justify-content-center 
+                text-uppercase 
+                p-3
+                ">
+            <div class="bubble">ANYTHING LA</div>
         </div>
+
         <div class="d-flex justify-content-center 
                     text-uppercase 
-                    p-3 bg-light text-dark 
+                    p-3 
                     ">
-            <h4>Track &#8226; Eat &#8226; View</h4>
+            <h2>Track &#8226; Eat &#8226; View</h2>
         </div>
         
         <!-- line break -->
         <br>
-
+        <br>
         <!-- content header -->
         <div class="container mb-3 mt-3">
             <figure class="text">
@@ -62,147 +98,8 @@
                     <label for="userName" class="form-label">Username:</label>
                     <input required type="text" class="form-control" id="userName" placeholder="Enter username" name="userName">
                 </div>
-                <button type="submit" class="btn btn-primary">Get Started!</button>
+                <button type="submit" class="btn btn-secondary">Get Started!</button>
             </form>
         </div>
-
     </body>
-
-    <br>
-    <br>
-    <br>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-center text-white">
-        <!-- Grid container -->
-        <div class="container p-4">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-            <!-- Facebook -->
-            <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" role="button"
-            ><i class="fa fa-facebook-f"></i
-            ></a>
-
-            <!-- Instagram -->
-            <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com" role="button"
-            ><i class="fa fa-instagram"></i
-            ></a>
-
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/drrnsyk/ssf_miniproject-01.git" role="button"
-            ><i class="fa fa-github"></i
-            ></a>
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Text -->
-        <section class="mb-4">
-            <p>
-            This free to use app helps users keep a record of the food places they have been to.
-            Feel free to reach out to us if there are any comments or feedbacks on how we could improve this application.
-            </p>
-            <p>
-            Visit us on GitHub!
-            </p>
-            <br>
-        </section>
-        <!-- Section: Text -->
-
-        <!-- Section: Links -->
-        <section class="left">
-            <!--Grid row-->
-            <div class="row">
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Anything</h5>
-
-                <ul class="list-unstyled mb-0">
-                <li>
-                    <span>We are a local base startup</span>
-                </li>
-                <li>
-                    <span>dedicated to developing the latest</span>
-                </li>
-                <li>
-                    <span>application. Feel free to reach out</span>
-                </li>
-                <li>
-                    <span>to us!</span>
-                </li>
-                </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Products</h5>
-
-                <ul class="list-unstyled mb-0">
-                <li>
-                    <span>Eat Anything</span>
-                </li>
-                <li>
-                    <span>Cook Something</span>
-                </li>
-                </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Useful Links</h5>
-
-                <ul class="list-unstyled mb-0">
-                <li>
-                    <a data-th-href="@{/track(userName=${userName})}" class="text-white">Track your food places</a>
-                </li>
-                <li>
-                    <a href="/eat" class="text-white">Random Food Generator</a>
-                </li>
-                <li>
-                    <a href="/view" class="text-white">View all places you have visited</a>
-                </li>
-                <li>
-                    <a href="/" class="text-white">Change User</a>
-                </li>
-                </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Contact Us</h5>
-
-                <ul class="list-unstyled mb-0">
-                <li>
-                    <span>Singapore</span>
-                </li>
-                <li>
-                    <span>darren.syk@gmail.com</span>
-                </li>
-                <li>
-                    <span>+65 9234 5678</span>
-                </li>
-                <li>
-                    <span>+65 6987 5432</span>
-                </li>
-                </ul>
-            </div>
-            <!--Grid column-->
-            </div>
-            <!--Grid row-->
-        </section>
-        <!-- Section: Links -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2022 Copyright:
-        <a class="text-white" href="https://www.linkedin.com/in/darren-sim-yi-kang/">Anythingapp</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-
 </html>

@@ -9,11 +9,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Edit</title>
         <style>
+            body {
+                background-image: url('https://img.freepik.com/free-photo/white-concrete-wall_53876-92803.jpg?w=1800&t=st=1665152027~exp=1665152627~hmac=037525a6afea022bd4f46e51c869a7226d4010307b502318dd0965ffac3d4651');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
           .verticalLine {
-              height: 100%;
-              border-right: 1px solid #000900;
-              position: absolute;
-              right: 50%;
+                height: 100%;
+                border-right: 1px solid #000900;
+                position: absolute;
+                right: 50%;
           }
           .center {
                 text-align: center;
@@ -34,17 +39,20 @@
         </div>
     </nav>
 
+    <!-- line break -->
+    <br>    
+
     <body>
         <!-- page header -->
         <div class="d-flex justify-content-center 
                     text-uppercase 
-                    p-3 bg-light text-dark 
+                    p-3  
                     ">
             <h1>Anything La</h1>
         </div>
 
         <!-- nav bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light 
+        <nav class="navbar navbar-expand-lg 
                     nav justify-content-center
                     ">
             <div class="navbar-nav">
@@ -64,7 +72,7 @@
                     Make some changes to your records
                 </blockquote>
                 <figcaption class="blockquote-footer">
-                    <a data-th-href="@{/track(userName=${userName})}">Go back without saving</a>
+                    <a href="/view">Go back without saving</a>
                 </figcaption>
               </figure>
         </div>
@@ -462,16 +470,6 @@
             ><i class="fa fa-facebook-f"></i
           ></a>
 
-          <!-- Twitter -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fa fa-twitter"></i
-          ></a>
-
-          <!-- Google -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fa fa-google"></i
-          ></a>
-
           <!-- Instagram -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
             ><i class="fa fa-instagram"></i
@@ -539,23 +537,14 @@
 
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Useful Links</h5>
-
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a data-th-href="@{/track(userName=${userName})}" class="text-white">Track your food places</a>
-                </li>
-                <li>
-                  <a href="/eat" class="text-white">Random food generator</a>
-                </li>
-                <li>
-                  <a href="/view" class="text-white">View all places you have visited</a>
-                </li>
-                <li>
-                  <a href="/" class="text-white">Change user</a>
-                </li>
-              </ul>
-            </div>
+                <h5 class="text-uppercase">Credits</h5>
+  
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="https://img.freepik.com/free-photo/white-concrete-wall_53876-92803.jpg?w=1800&t=st=1665152027~exp=1665152627~hmac=037525a6afea022bd4f46e51c869a7226d4010307b502318dd0965ffac3d4651" class="text-white">Background image by rawpixel</a>
+                  </li>
+                </ul>
+              </div>
             <!--Grid column-->
 
             <!--Grid column-->

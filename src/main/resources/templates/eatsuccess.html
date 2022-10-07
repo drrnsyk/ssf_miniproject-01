@@ -9,6 +9,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Eat Random</title>
         <style>
+            body {
+                background-image: url('https://img.freepik.com/free-photo/delicious-healthy-asian-food-gray-textured-background-with-copy-space_24972-1021.jpg?w=2000&t=st=1665153106~exp=1665153706~hmac=d77c1bbc0e4dbf7f26feb82c193410e233771d72883817db16eae9a7a9a6a93a');
+                background-repeat: no-repeat;
+                background-size: 110% 90%;
+            }
             .list-unstyled {
               text-align: left;
             }
@@ -25,17 +30,20 @@
         </div>
     </nav>
 
+    <!-- line break -->
+    <br>
+
     <body>
         <!-- page header -->
         <div class="d-flex justify-content-center 
                     text-uppercase 
-                    p-3 bg-light text-dark 
+                    p-3
                     ">
             <h1>Anything La</h1>
         </div>
 
         <!-- nav bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light 
+        <nav class="navbar navbar-expand-lg 
                     nav justify-content-center
                     ">
             <div class="navbar-nav">
@@ -47,18 +55,6 @@
 
         <!-- line break -->
         <br>
-
-        <!-- content header -->
-        <div class="container mb-3 mt-3">
-            <figure class="text-end">
-                <blockquote class="blockquote">
-                  Welcome <span data-th-text="${userName}"></span>, what do you want to eat?
-                </blockquote>
-                <figcaption class="blockquote-footer">
-                    And so has been decided..
-                </figcaption>
-            </figure>
-        </div>
 
         <!-- line break -->
         <br>
@@ -82,6 +78,16 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <!-- Footer -->
     <footer class="bg-dark text-center text-white">
@@ -92,16 +98,6 @@
           <!-- Facebook -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
             ><i class="fa fa-facebook-f"></i
-          ></a>
-
-          <!-- Twitter -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fa fa-twitter"></i
-          ></a>
-
-          <!-- Google -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fa fa-google"></i
           ></a>
 
           <!-- Instagram -->
@@ -171,23 +167,14 @@
 
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Useful Links</h5>
-
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a data-th-href="@{/track(userName=${userName})}" class="text-white">Track your food places</a>
-                </li>
-                <li>
-                  <a href="/eat" class="text-white">Random food generator</a>
-                </li>
-                <li>
-                  <a href="/view" class="text-white">View all places you have visited</a>
-                </li>
-                <li>
-                  <a href="/" class="text-white">Change user</a>
-                </li>
-              </ul>
-            </div>
+                <h5 class="text-uppercase">Credits</h5>
+  
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="https://img.freepik.com/free-photo/delicious-healthy-asian-food-gray-textured-background-with-copy-space_24972-1021.jpg?w=2000&t=st=1665153106~exp=1665153706~hmac=d77c1bbc0e4dbf7f26feb82c193410e233771d72883817db16eae9a7a9a6a93a" class="text-white">Background image by denamorado</a>
+                  </li>
+                </ul>
+              </div>
             <!--Grid column-->
 
             <!--Grid column-->
