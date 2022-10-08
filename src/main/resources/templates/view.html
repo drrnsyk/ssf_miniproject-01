@@ -76,7 +76,7 @@
             <H3></H3>
             <table class="table table-hover">
                 <thead>
-                  <tr>
+                    <tr>
                     <th scope="col">S/N</th>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
@@ -85,10 +85,10 @@
                     <th scope="col">Update</th>
                     <th scope="col">Delete</th>
                     <th scope="col">Reviews</th>
-                  </tr>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr data-th-each="p,iterationStatus: ${places}">
+                    <tr data-th-each="p,iterationStatus: ${places}">
                     <th data-th-text="${iterationStatus.count}"></th>
                     <td data-th-text="${p.getId}"></td>
                     <td data-th-text="${p.getEstablishmentName}"></td>
@@ -97,7 +97,7 @@
                     <td><a data-th-href="@{/view/edit/{id}(id=${p.id})}">Edit</a></td>
                     <td><a data-th-href="@{/view/delete/{id}(id=${p.id})}">Delete</a></td>
                     <td><a data-th-href="@{/view/reviews/{establishmentName}(establishmentName=${p.establishmentName})}">Get Reviews</a></td>
-                  </tr>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -31,6 +31,13 @@ public class AnythingappViewController {
         String userName = Place.userName;
         List<Place> places = new LinkedList<>();
         places = anythingSvc.getFromRepo(userName);
+        Boolean ifEmpty = places.size() == 0;
+        if (places.size() > 0)
+            ifEmpty = false;
+
+        System.out.println(ifEmpty);
+        System.out.println(places.size());
+
         model.addAttribute("userName", userName);
         model.addAttribute("places", places);
         return "view";

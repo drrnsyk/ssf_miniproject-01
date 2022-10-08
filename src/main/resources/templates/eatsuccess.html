@@ -10,9 +10,9 @@
         <title>Eat Random</title>
         <style>
             body {
-                background-image: url('https://img.freepik.com/free-photo/delicious-healthy-asian-food-gray-textured-background-with-copy-space_24972-1021.jpg?w=2000&t=st=1665153106~exp=1665153706~hmac=d77c1bbc0e4dbf7f26feb82c193410e233771d72883817db16eae9a7a9a6a93a');
+                background-image: url('https://img.freepik.com/free-vector/thai-cuisine-food-flat-illustration_1284-74042.jpg?w=1060&t=st=1665213579~exp=1665214179~hmac=55325ae360b3f2f7f16bdecc2be02c4cd5ed2bfc644f8016574af97bd91711b2');
                 background-repeat: no-repeat;
-                background-size: 110% 90%;
+                background-size: 110% 80%;
             }
             .list-unstyled {
               text-align: left;
@@ -63,16 +63,27 @@
 
         <!-- content -->
         <div class="container">
-            <div class="d-flex justify-content-center">
-                <h1>You should eat</h1>
+            <div data-th-if="${isEmpty}">
+                <div class="text-center">
+                    <h3>
+                        <p>Oops, you do not have any records yet!</p>
+                        <p>Start Tracking!</p>
+                    </h3>
+                </div>
             </div>
-            <div class="d-flex justify-content-center">
-                <h1><span data-th-text="${randomPlace.establishmentName}"></span></h1>
-            </div>
-            <div class="d-flex justify-content-center">
-                <h1>at <span data-th-text="${randomPlace.neighbourhood}"></span></h1>
+            <div data-th-unless="${isEmpty}">
+                <div class="d-flex justify-content-center">
+                    <h1>You should eat</h1>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <h1><span data-th-text="${randomPlace.establishmentName}"></span></h1>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <h1>at <span data-th-text="${randomPlace.neighbourhood}"></span></h1>
+                </div>
             </div>
         </div>
+
     </body>
 
     <br>
@@ -171,7 +182,7 @@
   
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="https://img.freepik.com/free-photo/delicious-healthy-asian-food-gray-textured-background-with-copy-space_24972-1021.jpg?w=2000&t=st=1665153106~exp=1665153706~hmac=d77c1bbc0e4dbf7f26feb82c193410e233771d72883817db16eae9a7a9a6a93a" class="text-white">Background image by denamorado</a>
+                    <a href="https://img.freepik.com/free-vector/thai-cuisine-food-flat-illustration_1284-74042.jpg?w=1060&t=st=1665213579~exp=1665214179~hmac=55325ae360b3f2f7f16bdecc2be02c4cd5ed2bfc644f8016574af97bd91711b2" class="text-white">Background image by macrovector</a>
                   </li>
                 </ul>
               </div>

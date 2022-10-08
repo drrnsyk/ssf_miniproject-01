@@ -38,37 +38,45 @@ public class AnythingappEatController {
         List<Place> places = new LinkedList<>();
         places = anythingSvc.getFromRepo(userName);
         List<Place> filteredPlaces = new LinkedList<>();
+        Boolean isEmpty = true;
         // filteredPlaces = places;
         // System.out.println(neighbourhood);
         // System.out.println(establishmentType);
 
-        for (int i = 0; i < places.size(); i++) {
-            if (neighbourhood.equalsIgnoreCase("nil") && establishmentType.equalsIgnoreCase("nil")) {
-                filteredPlaces.add(places.get(i));
-            } else if (neighbourhood.equalsIgnoreCase("nil")) {
-                if (places.get(i).getEstablishmentType().equalsIgnoreCase(establishmentType)) {
+        if (places.size() > 0) {
+            isEmpty = false;
+            for (int i = 0; i < places.size(); i++) {
+                if (neighbourhood.equalsIgnoreCase("nil") && establishmentType.equalsIgnoreCase("nil")) {
                     filteredPlaces.add(places.get(i));
-                }
-            } else if (establishmentType.equalsIgnoreCase("nil")) {
-                if (places.get(i).getNeighbourhood().equalsIgnoreCase(neighbourhood)) {
-                    filteredPlaces.add(places.get(i));
+                } else if (neighbourhood.equalsIgnoreCase("nil")) {
+                    if (places.get(i).getEstablishmentType().equalsIgnoreCase(establishmentType)) {
+                        filteredPlaces.add(places.get(i));
+                    }
+                } else if (establishmentType.equalsIgnoreCase("nil")) {
+                    if (places.get(i).getNeighbourhood().equalsIgnoreCase(neighbourhood)) {
+                        filteredPlaces.add(places.get(i));
+                    }
                 }
             }
+    
+            Random rand = new Random();
+            int upperbound = filteredPlaces.size();
+            int intRand = rand.nextInt(upperbound);
+    
+            System.out.println(intRand);
+    
+            Place randomPlace = filteredPlaces.get(intRand);
+    
+            model.addAttribute("userName", userName);
+            model.addAttribute("randomPlace", randomPlace);
+            model.addAttribute("isEmpty", isEmpty);
+    
+            return "eatsuccess";
         }
-
-        Random rand = new Random();
-        int upperbound = filteredPlaces.size();
-        int intRand = rand.nextInt(upperbound);
-
-        System.out.println(intRand);
-
-        Place randomPlace = filteredPlaces.get(intRand);
-
+        
         model.addAttribute("userName", userName);
-        model.addAttribute("randomPlace", randomPlace);
-
+        model.addAttribute("isEmpty", isEmpty);
         return "eatsuccess";
-
     }
     
 }

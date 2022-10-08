@@ -127,6 +127,8 @@ public class AnythingappService {
 
     public List<Place> getFromRepo(String userName) {
         Optional<List<Place>> opt = anythingRepo.getFromRedis(userName);
+        if (opt.isEmpty()) // if the result is empty
+            return List.of(); // returns an empty list 
         return opt.get();
     }
 
